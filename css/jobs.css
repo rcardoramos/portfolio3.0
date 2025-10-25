@@ -1,0 +1,79 @@
+ #job-tabs {
+     display: flex;
+     flex-direction: row;
+     overflow-x: auto;
+     border-bottom: 2px solid #334155;
+     margin-bottom: 20px;
+     width: 100%;
+     justify-content: center;
+ }
+
+ .job-tab-button {
+     display: block;
+     text-align: center;
+     padding: 8px 12px;
+     border-left: none;
+     border-bottom: 2px solid transparent;
+     color: var(--secondary-text-color);
+     background-color: transparent;
+     font-family: var(--font-mono);
+     transition: var(--transition);
+     white-space: nowrap;
+     font-size: 0.9rem;
+ }
+
+ .job-tab-button:hover {
+     background-color: rgba(37, 228, 230, 0.05);
+     color: var(--lila);
+ }
+
+ .job-tab-button.active {
+     color: var(--lila);
+     border-bottom-color: var(--lila);
+     background-color: rgba(37, 228, 230, 0.1);
+ }
+
+ .job-details-company-link {
+     text-decoration: none;
+     transition: text-decoration 0.3s ease;
+ }
+
+ .job-details-company-link:hover {
+     text-decoration: underline;
+ }
+
+ /* Ajustes de espacio en el contenido de los detalles del trabajo */
+ #job-details h3 {
+     color: var(--primary-text-color);
+     margin-bottom: 3px;
+ }
+
+ #job-details .date {
+     color: var(--secondary-text-color);
+     font-family: var(--font-mono);
+     font-size: 0.8rem;
+     margin-bottom: 15px;
+ }
+
+ #job-details .location {
+     font-size: 0.8rem;
+     color: var(--secondary-text-color);
+     margin-bottom: 10px;
+ }
+
+ #job-details .location+.mt-4 {
+     /* Espacio antes de la descripción */
+     margin-top: 15px;
+ }
+
+ #job-details .mt-4>p {
+     margin-bottom: 0.75rem;
+ }
+
+ #job-details .mt-6 {
+     margin-top: 15px;
+ }
+
+ #job-details .mt-6>p {
+     margin-bottom: 5px;
+ }

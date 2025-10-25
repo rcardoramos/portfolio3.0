@@ -5,669 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Ricardo Ramos | Frontend Developer Portfolio</title>
-
-    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Press+Start+2P&display=swap"
         rel="stylesheet">
-
-    <style>
-        /* Configuración personalizada de Tailwind y fuentes */
-        :root {
-            /* Colores de la paleta MindDev */
-            --primary-text-color: #ccd6f6;
-            /* Texto principal */
-            --secondary-text-color: #8892b0;
-            /* Texto secundario/fechas/descripciones */
-            --background: #24283b;
-            /* Fondo principal (Navy oscuro) */
-            --white: #e6f1ff;
-            --lila: #25E4E6;
-            /* Color de acento neón (Lila/Cian) */
-
-            /* Fuentes y Transiciones */
-            --font-sans: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-            --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-            --transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
-            /* Transición más suave */
-        }
-
-        html {
-            scroll-behavior: smooth;
-            /* SCROLL SUAVE AÑADIDO */
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--background);
-            color: var(--secondary-text-color);
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        /* --- Estilos de Barra de Scroll --- */
-        /* Pista del scroll (fondo) */
-        ::-webkit-scrollbar {
-            width: 8px;
-            background-color: var(--background);
-        }
-
-        /* Barra (el pulgar) */
-        ::-webkit-scrollbar-thumb {
-            background-color: var(--lila);
-            border-radius: 4px;
-            border: 2px solid var(--background);
-            /* Margen sutil */
-        }
-
-        /* --- Preloader Styles --- */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--background);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
-            opacity: 1;
-        }
-
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        #preloader-logo {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 3rem;
-            color: var(--lila);
-            animation: pulse-glow 1.5s infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            from {
-                transform: scale(1);
-                opacity: 0.8;
-                text-shadow: 0 0 5px var(--lila);
-            }
-
-            to {
-                transform: scale(1.05);
-                opacity: 1;
-                text-shadow: 0 0 15px var(--lila), 0 0 30px var(--lila);
-            }
-        }
-
-
-        /* --- Estilos de Navegación --- */
-        .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 5rem;
-            /* h-20 */
-        }
-
-        /* Hover en el Logo RR */
-        .navbar-logo {
-            transition: var(--transition);
-        }
-
-        .navbar-logo:hover {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-
-
-        .navbar-links {
-            flex-grow: 1;
-            /* Permite que el contenedor de links ocupe el espacio central */
-            display: flex;
-            justify-content: center;
-            /* Centra los links dentro de su contenedor */
-            margin: 0 2rem;
-            /* Espacio para separar del logo y botón */
-        }
-
-        .navbar-links a {
-            padding: 0 1rem;
-            transition: var(--transition);
-            color: var(--secondary-text-color);
-        }
-
-        .navbar-links a:hover {
-            color: var(--lila);
-            /* Usando --lila en el hover de los links */
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .navbar-links {
-                display: none;
-                /* Ocultar links centrados en móvil */
-            }
-
-            .navbar-content {
-                justify-content: space-between;
-            }
-        }
-
-        /* --- Estilos de Botones y Elementos de Interacción --- */
-
-        .neon-button {
-            border: 1px solid var(--lila);
-            /* Usando --lila */
-            color: var(--lila);
-            /* Usando --lila */
-            background-color: transparent;
-            padding: 0.75rem 1.5rem;
-            transition: var(--transition);
-            font-weight: 600;
-            border-radius: 4px;
-            /* Un poco redondeado */
-        }
-
-        .neon-button:hover {
-            background-color: rgba(37, 228, 230, 0.1);
-            /* Utiliza --lila para el hover */
-            color: var(--lila);
-            box-shadow: 0 0 15px rgba(37, 228, 230, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Botón CV Compacto (Circular) */
-        .cv-button-compact {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--lila);
-            color: var(--lila);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            margin-right: 15px;
-            /* Espacio antes del selector de idioma */
-            background-color: transparent;
-        }
-
-        .cv-button-compact:hover {
-            background-color: rgba(37, 228, 230, 0.15);
-            box-shadow: 0 0 10px rgba(37, 228, 230, 0.5);
-            transform: scale(1.1);
-        }
-
-        /* Selector de Idioma */
-        .lang-selector {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--secondary-text-color);
-        }
-
-        .lang-selector span {
-            cursor: pointer;
-            padding: 5px;
-            transition: var(--transition);
-        }
-
-        .lang-selector .active {
-            color: var(--lila);
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .lang-selector span:not(.active):hover {
-            color: var(--primary-text-color);
-        }
-
-        /* Hover en Iconos del Hero */
-        .hero-social-icon {
-            transition: var(--transition);
-        }
-
-        .hero-social-icon:hover {
-            transform: translateY(-5px);
-            filter: drop-shadow(0 0 10px rgba(37, 228, 230, 0.5));
-        }
-
-        /* --- Hero Section & Visual Element --- */
-
-        #header-hero-section {
-            background-image:
-                linear-gradient(rgba(36, 40, 59, 0.95), rgba(36, 40, 59, 0.95)),
-                /* Usando --background */
-                repeating-linear-gradient(45deg, #373c50 0, #373c50 1px, transparent 1px, transparent 50px),
-                repeating-linear-gradient(-45deg, #373c50 0, #373c50 1px, transparent 1px, transparent 50px);
-            background-size: 100% 100%, 100px 100px, 100px 100px;
-            animation: none;
-        }
-
-        /* Estilo para el texto grande del Hero */
-        .hero-title {
-            color: var(--primary-text-color);
-            font-weight: 900;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInTranslate 0.8s forwards ease-out;
-        }
-
-        .hero-title:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .hero-title:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-
-        .hero-title:nth-child(3) {
-            animation-delay: 0.9s;
-        }
-
-        @keyframes fadeInTranslate {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* --- Sobre Mí (About Me) Section --- */
-
-        /* Estilos para el hover de la foto */
-        #profile-photo-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            border-radius: 4px;
-            background-color: var(--lila);
-            /* Usando --lila para el fondo de mezcla */
-            transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-            /* Añadido transform */
-            cursor: pointer;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 30px -15px rgba(37, 228, 230, 0.2);
-            /* Usando --lila para la sombra */
-        }
-
-        #profile-photo {
-            filter: grayscale(100%) contrast(1) brightness(90%);
-            mix-blend-mode: multiply;
-            transition: all 0.5s ease;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 2px solid transparent;
-        }
-
-        #profile-photo-container:hover #profile-photo {
-            filter: none;
-            mix-blend-mode: normal;
-            border-color: var(--lila);
-        }
-
-        #profile-photo-container:hover {
-            box-shadow: 0 0 0 8px rgba(37, 228, 230, 0.2);
-            border-color: var(--lila);
-            transform: scale(1.03);
-            /* Ligeramente más grande al hover */
-        }
-
-        /* --- Project Card Specific Styles (New/Combined Style) --- */
-        .project-card {
-            background-color: #2a2e45;
-            border-radius: 4px;
-            transition: var(--transition);
-            /* min-height para simular el aspecto cuadrado en grid */
-            min-height: 280px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(37, 228, 230, 0.3);
-            border-color: var(--lila);
-        }
-
-        .project-category {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--lila);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-text-color);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-description {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: var(--secondary-text-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Títulos de sección con subrayado */
-        .section-heading {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 4rem;
-            color: var(--primary-text-color);
-        }
-
-        .section-heading .number {
-            color: var(--lila);
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .section-heading::after {
-            content: '';
-            display: block;
-            position: relative;
-            top: 0;
-            width: 200px;
-            height: 1px;
-            margin-left: 20px;
-            background-color: #334155;
-        }
-
-        /* Ajuste para pantallas más pequeñas para la línea del heading */
-        @media (max-width: 768px) {
-            .section-heading::after {
-                width: 100px;
-                margin-left: 10px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .section-heading::after {
-                width: 70px;
-            }
-        }
-
-        /* Estilos para los íconos de redes sociales verticales en el Hero */
-        .social-links-vertical,
-        .email-vertical {
-            display: none;
-        }
-
-        /* --- Estilos de Job Tabs (Modificados a Horizontal Tabs) --- */
-
-        /* Contenedor de las pestañas horizontales */
-        #job-tabs {
-            display: flex;
-            flex-direction: row;
-            overflow-x: auto;
-            border-bottom: 2px solid #334155;
-            margin-bottom: 20px;
-            width: 100%;
-            /* AÑADIDO: Centrar botones de pestaña */
-            justify-content: center;
-        }
-
-        /* Botón de pestaña */
-        .job-tab-button {
-            display: block;
-            text-align: center;
-            padding: 8px 12px;
-            border-left: none;
-            border-bottom: 2px solid transparent;
-            color: var(--secondary-text-color);
-            background-color: transparent;
-            font-family: var(--font-mono);
-            transition: var(--transition);
-            white-space: nowrap;
-            font-size: 0.9rem;
-        }
-
-        .job-tab-button:hover {
-            background-color: rgba(37, 228, 230, 0.05);
-            color: var(--lila);
-        }
-
-        .job-tab-button.active {
-            color: var(--lila);
-            border-bottom-color: var(--lila);
-            background-color: rgba(37, 228, 230, 0.1);
-        }
-
-        /* Enlace de la empresa en la descripción */
-        .job-details-company-link {
-            /* Estilo base sin subrayado */
-            text-decoration: none;
-            transition: text-decoration 0.3s ease;
-        }
-
-        .job-details-company-link:hover {
-            /* Aplicar subrayado suave al hacer hover */
-            text-decoration: underline;
-        }
-
-        /* Ajustes de espacio en el contenido de los detalles del trabajo */
-        #job-details h3 {
-            color: var(--primary-text-color);
-            margin-bottom: 3px;
-        }
-
-        #job-details .date {
-            color: var(--secondary-text-color);
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-
-        #job-details .location {
-            font-size: 0.8rem;
-            color: var(--secondary-text-color);
-            margin-bottom: 10px;
-        }
-
-        #job-details .location+.mt-4 {
-            /* Espacio antes de la descripción */
-            margin-top: 15px;
-        }
-
-        #job-details .mt-4>p {
-            margin-bottom: 0.75rem;
-        }
-
-        #job-details .mt-6 {
-            margin-top: 15px;
-        }
-
-        #job-details .mt-6>p {
-            margin-bottom: 5px;
-        }
-
-        /* Contacto form input style */
-        .fun-input {
-            background-color: #1a1e30;
-            border: 1px solid #334155;
-            color: var(--primary-text-color);
-            transition: var(--transition);
-            /* AÑADIDO: Espaciado interno en inputs */
-            padding: 0.75rem;
-        }
-
-        .fun-input:focus {
-            outline: none;
-            border-color: var(--lila);
-            box-shadow: 0 0 0 2px rgba(37, 228, 230, 0.4);
-        }
-
-        /* --- Contact Form Card (NUEVO ESTILO CON HOVER) --- */
-        .contact-form-card {
-            background-color: #2a2e45;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            transition: var(--transition);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form-card:hover {
-            border-color: rgba(37, 228, 230, 0.5);
-            box-shadow: 0 0 20px rgba(37, 228, 230, 0.2);
-            transform: translateY(-3px);
-        }
-
-        /* --- Contact Section Specific Styles --- */
-        .contact-input-group {
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-input-group label {
-            display: block;
-            color: var(--primary-text-color);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-input-group input,
-        .contact-input-group textarea,
-        .contact-input-group select {
-            border: none;
-            border-bottom: 1px solid #334155;
-            background-color: transparent;
-            padding: 0.5rem 0;
-            font-size: 1rem;
-            color: var(--primary-text-color);
-            width: 100%;
-            transition: border-bottom-color 0.3s;
-        }
-
-        .contact-input-group input:focus,
-        .contact-input-group textarea:focus,
-        .contact-input-group select:focus {
-            outline: none;
-            border-bottom-color: var(--lila);
-        }
-
-        .contact-highlight-text {
-            /* Estilo para el texto inspirador de MindDev */
-            font-size: 2.25rem;
-            /* text-4xl */
-            line-height: 1.1;
-            font-weight: 800;
-            color: var(--primary-text-color);
-        }
-
-        .contact-highlight-text strong {
-            color: var(--lila);
-            font-weight: 900;
-        }
-
-
-        /* --- Footer Styles (NUEVO ESTILO HORIZONTAL) --- */
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        .footer-social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.25rem;
-            /* Espaciado entre íconos */
-            margin-bottom: 1rem;
-        }
-
-        .footer-social-links a {
-            color: var(--secondary-text-color);
-            transition: var(--transition);
-        }
-
-        .footer-social-links a:hover {
-            color: var(--lila);
-            transform: translateY(-2px);
-        }
-
-        .footer-email {
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
-            color: var(--secondary-text-color);
-            transition: var(--transition);
-        }
-
-        .footer-email:hover {
-            color: var(--lila);
-            text-decoration: underline;
-        }
-
-        /* --- Tech Stack Specific Styles (Simplified) --- */
-        .tech-card {
-            background-color: transparent;
-            padding: 1rem 0;
-            border-radius: 0;
-            transition: background-color 0.3s, border-left 0.3s, transform 0.3s;
-            /* Transición para el borde y hover */
-            border-bottom: 1px solid #2a2e45;
-            border-left: 3px solid transparent;
-            /* Borde izquierdo inicial transparente */
-        }
-
-        .tech-card:hover {
-            background-color: rgba(37, 228, 230, 0.05);
-            transform: translateX(5px);
-            /* Desplazamiento sutil al hover */
-            border-left: 3px solid var(--lila);
-            /* Borde Lila al hover */
-            box-shadow: none;
-        }
-
-        .tech-category-title {
-            color: var(--primary-text-color);
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #334155;
-            display: block;
-        }
-
-        /* Ajuste de íconos en Tech Stack */
-        .tech-card .lucide {
-            width: 28px;
-            /* Tamaño de ícono aumentado */
-            height: 28px;
-        }
-
-        /* Ocultar etiquetas ya que se eliminan por requisito del usuario */
-        .tech-label {
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body class="antialiased">
@@ -677,17 +19,15 @@
         <span id="preloader-logo">RR</span>
     </div>
 
-    <!-- Navbar/Header -->
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm shadow-lg"
         style="background-color: rgba(36, 40, 59, 0.95);">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="navbar-content">
-                <!-- Logo --><a href="#inicio" class="text-2xl font-extrabold tracking-tight navbar-logo"
+                <a href="#inicio" class="text-2xl font-extrabold tracking-tight navbar-logo"
                     style="font-family: 'Press Start 2P', monospace; font-size: 1.25rem; color: var(--lila);">
                     RR
                 </a>
 
-                <!-- Links Centrados -->
                 <div class="navbar-links">
                     <a href="#sobre-mi" class="text-sm nav-link" data-key="nav_about">Sobre Mí</a>
                     <a href="#habilidades" class="text-sm nav-link" data-key="nav_skills">Skills</a>
@@ -696,15 +36,12 @@
                     <a href="#contacto" class="text-sm nav-link" data-key="nav_contact">Contacto</a>
                 </div>
 
-                <!-- Botón CV y Selector de Idioma (Derecha) -->
                 <div class="flex items-center space-x-4">
-                    <!-- Botón CV Compacto -->
-                    <a href="/ruta/a/tu/cv_ricardo_ramos.pdf" target="_blank" download class="cv-button-compact"
-                        data-key="nav_cv">
+                    <a href="./assets/docs/Ricardo Ramos Julca - Frontend Developer.pdf" target="_blank" download
+                        class="cv-button-compact" data-key="nav_cv">
                         CV
                     </a>
 
-                    <!-- Selector de Idioma -->
                     <div class="lang-selector font-mono flex items-center">
                         <span id="lang-es" data-lang="es" class="active">ES</span>
                         <span class="mx-1 text-gray-500">/</span>
@@ -715,37 +52,32 @@
         </nav>
     </header>
 
-    <!-- Hero Section (Inicio) - Estilo Minimalista -->
-    <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center"
+    <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center -mt-12"
         style="background-color: var(--background);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-            <div class="max-w-4xl mx-auto"> <!-- Contenedor Limitado para evitar solapamiento --><!-- Saludo -->
+            <div class="max-w-4xl mx-auto">
                 <p class="text-lg md:text-xl mb-4 font-mono font-semibold tracking-wide hero-title"
                     style="color: var(--lila); animation-delay: 0.3s;" data-key="hero_greeting">
                     Hola, mi nombre es
                 </p>
 
-                <!-- Nombre -->
                 <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none mb-4"
                     style="color: var(--primary-text-color); animation-delay: 0.6s;">
-                    <!-- REDUCIDO EL TAMAÑO DE LA FUENTE -->
                     Ricardo Ramos
                 </h1>
 
-                <!-- Título/Rol -->
                 <h2 class="hero-title text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none mb-12"
                     style="color: var(--secondary-text-color); animation-delay: 0.9s;" data-key="hero_title">
                     Frontend Developer
                 </h2>
 
-                <!-- Social Icons -->
                 <div class="flex justify-center space-x-6 hero-title" style="animation-delay: 1.2s;">
-                    <a href="https://github.com/tu_usuario" target="_blank"
+                    <a href="https://github.com/rcardoramos" target="_blank"
                         class="hover:text-cyan-400 transition duration-300 hero-social-icon"
                         style="color: var(--lila);">
                         <i data-lucide="github" class="w-10 h-10"></i>
                     </a>
-                    <a href="https://linkedin.com/in/tu_perfil" target="_blank"
+                    <a href="https://www.linkedin.com/in/rcardo-ramos/" target="_blank"
                         class="hover:text-cyan-400 transition duration-300 hero-social-icon"
                         style="color: var(--lila);">
                         <i data-lucide="linkedin" class="w-10 h-10"></i>
@@ -753,11 +85,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Elemento Visual del Hero eliminado -->
     </section>
 
-    <!-- 01. Sobre Mí Section -->
     <section id="sobre-mi" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto"> <!-- Contenedor Limitado para el contenido -->
             <h2 class="section-heading">
@@ -765,19 +94,15 @@
             </h2>
             <div class="grid md:grid-cols-5 gap-12 items-start">
 
-                <!-- Profile Photo (Ahora a la izquierda) -->
                 <div class="md:col-span-2 flex justify-center pt-8 md:pt-0">
                     <div id="profile-photo-container">
 
-                        <img id="profile-photo" src="./unnamed.jpg"
-                            onerror="this.onerror=null;this.src='https://placehold.co/300x300/112240/25E4E6?text=RR'"
-                            alt="Foto de Perfil de Ricardo Ramos" />
+                        <img id="profile-photo" src="./unnamed.jpg" alt="Foto de Perfil de Ricardo Ramos" />
                     </div>
                 </div>
 
-                <!-- Text Content (Ahora a la derecha) -->
+                <!-- Text Content -->
                 <div class="md:col-span-3 text-base leading-relaxed space-y-4 pr-8">
-                    <!-- COMENTARIO: MODIFICAR TEXTO DE SOBRE MÍ EN EL OBJETO DE TRADUCCIONES EN JS -->
                     <p data-key="about_p1">
                         ¡Hola! Soy <strong style="color: var(--lila);">Ricardo Ramos</strong>, desarrollador frontend y
                         fundador de <a href="#contacto" style="color: var(--lila);"
@@ -813,9 +138,8 @@
         </div>
     </section>
 
-    <!-- 02. Habilidades Section (NUEVA NUMERACIÓN) -->
     <section id="habilidades" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto"> <!-- Contenedor Limitado para el contenido -->
+        <div class="max-w-4xl mx-auto">
             <h2 class="section-heading">
                 <span class="number">02.</span> <span data-key="section_skills">Skills</span>
             </h2>
@@ -823,10 +147,9 @@
                 Tecnologías que domino para crear experiencias digitales de alto impacto.
             </p>
 
-            <!-- Estructura de 3 columnas para Tech Stack (lg:grid-cols-3) -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
 
-                <!-- COLUMNA 1: FRONTEND & WEB -->
+                <!-- FRONTEND & WEB -->
                 <div>
                     <h3 class="tech-category-title" data-key="tech_group_frontend">Frontend & Web</h3>
                     <div class="space-y-0">
@@ -882,7 +205,7 @@
                     </div>
                 </div>
 
-                <!-- COLUMNA 2: BACKEND & BASES DE DATOS -->
+                <!-- BACKEND & BASES DE DATOS -->
                 <div>
                     <h3 class="tech-category-title" data-key="tech_group_backend_db">Backend & Bases de Datos</h3>
                     <div class="space-y-4">
@@ -939,7 +262,7 @@
                     </div>
                 </div>
 
-                <!-- COLUMNA 3: HERRAMIENTAS & PRÁCTICAS -->
+                <!-- HERRAMIENTAS & PRÁCTICAS -->
                 <div>
                     <h3 class="tech-category-title" data-key="tech_group_tools_practices">Herramientas & Prácticas</h3>
                     <div class="space-y-4">
@@ -956,7 +279,7 @@
                             </div>
                         </div>
 
-                        <!-- Tarjeta Scrum / Jira / Trello -->
+                        <!-- Tarjeta Scrum -->
                         <div class="tech-card flex justify-between items-center hover:shadow-lg">
                             <div class="flex items-center space-x-4">
                                 <i data-lucide="trello" class="w-7 h-7 text-blue-400"></i>
@@ -969,7 +292,7 @@
                             </div>
                         </div>
 
-                        <!-- Tarjeta UX/Figma -->
+                        <!-- UX/Figma -->
                         <div class="tech-card flex justify-between items-center hover:shadow-lg">
                             <div class="flex items-center space-x-4">
                                 <i data-lucide="figma" class="w-7 h-7 text-pink-500"></i>
@@ -981,7 +304,7 @@
                             </div>
                         </div>
 
-                        <!-- Tarjeta Vercel / Netlify (Hosting) -->
+                        <!-- Vercel / Netlify -->
                         <div class="tech-card flex justify-between items-center hover:shadow-lg">
                             <div class="flex items-center space-x-4">
                                 <i data-lucide="cloud" class="w-7 h-7 text-purple-400"></i>
@@ -998,36 +321,30 @@
         </div>
     </section>
 
-    <!-- 03. Experiencia Section (Job Tabs) - NUMERACIÓN AJUSTADA -->
     <section id="experiencia" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto"> <!-- Contenedor Limitado para el contenido -->
             <h2 class="section-heading">
                 <span class="number">03.</span> <span data-key="section_experience">Mi Trayectoria</span>
             </h2>
 
-            <!-- NUEVO CONTENEDOR DE PESTAÑAS HORIZONTALES -->
             <div id="job-tabs-container" class="mb-6">
                 <div id="job-tabs" class="flex flex-row overflow-x-auto border-b-2 border-[#334155]">
-                    <!-- Los botones de trabajo se insertan aquí con JavaScript -->
                 </div>
             </div>
 
-            <!-- Detalles del Trabajo -->
             <div id="job-details" class="min-h-[300px]">
-                <!-- El contenido de la experiencia se inserta aquí con JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- 04. Proyectos Section - NUMERACIÓN AJUSTADA -->
     <section id="proyectos" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto"> <!-- REDUCIDO A max-w-4xl -->
+        <div class="max-w-4xl mx-auto">
             <h2 class="section-heading">
                 <span class="number">04.</span> <span data-key="section_projects">Proyectos Destacados</span>
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Proyecto 1: Página Web (HTML/CSS/JS) -->
+                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <div>
                         <p class="project-category" data-key="proj1_category">Desarrollo Web</p>
@@ -1037,7 +354,6 @@
                             utilizando solo lenguajes nativos y Tailwind CSS para un diseño ágil.</p>
                     </div>
 
-                    <!-- Footer: Tech Stack y Links -->
                     <div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono" style="color: var(--lila);">
                             <span>HTML5</span>
@@ -1047,17 +363,15 @@
                         </div>
 
                         <div class="flex justify-end items-center mt-4 space-x-3 text-gray-400">
-                            <!-- Link Externo --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="external-link"
-                                    class="w-5 h-5"></i></a>
-                            <!-- Link Github --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="external-link" class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="github" class="w-5 h-5"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto 2: Landing Page (React/Vite) -->
+                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <div>
                         <p class="project-category" data-key="proj2_category">Web Moderna</p>
@@ -1067,7 +381,6 @@
                             velocidad de carga, construida sobre React y Vite para modernidad.</p>
                     </div>
 
-                    <!-- Footer: Tech Stack y Links -->
                     <div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono" style="color: var(--lila);">
                             <span>React</span>
@@ -1076,17 +389,15 @@
                         </div>
 
                         <div class="flex justify-end items-center mt-4 space-x-3 text-gray-400">
-                            <!-- Link Externo --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="external-link"
-                                    class="w-5 h-5"></i></a>
-                            <!-- Link Github --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="external-link" class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="github" class="w-5 h-5"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto 3: App Vue (Vue/Vite) -->
+                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <div>
                         <p class="project-category" data-key="proj3_category">Aplicación Web</p>
@@ -1096,7 +407,6 @@
                             desarrollada con Vue y Vite, enfocada en una experiencia de usuario reactiva y fluida.</p>
                     </div>
 
-                    <!-- Footer: Tech Stack y Links -->
                     <div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono" style="color: var(--lila);">
                             <span>Vue</span>
@@ -1105,61 +415,54 @@
                         </div>
 
                         <div class="flex justify-end items-center mt-4 space-x-3 text-gray-400">
-                            <!-- Link Externo --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="external-link"
-                                    class="w-5 h-5"></i></a>
-                            <!-- Link Github --><a href="#" target="_blank"
-                                class="hover:text-cyan-400 transition duration-300"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="external-link" class="w-5 h-5"></i></a>
+                            <a href="#" target="_blank" class="hover:text-cyan-400 transition duration-300"><i
+                                    data-lucide="github" class="w-5 h-5"></i></a>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-
             <div class="text-center mt-16">
-                <a href="https://github.com/tu_usuario" target="_blank" class="neon-button text-base rounded-md"
-                    data-key="btn_view_repos">
+                <a href="https://github.com/rcardoramos?tab=repositories" target="_blank"
+                    class="neon-button text-base rounded-md" data-key="btn_view_repos">
                     Ver Repositorios Completos
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 05. Contacto Section - NUMERACIÓN AJUSTADA -->
     <section id="contacto" class="py-20 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <!-- Alineación del Título: se usa mx-auto para centrar el bloque inline -->
         <h2 class="section-heading inline-block mx-auto">
             <span class="number">05.</span> <span data-key="section_contact_heading">Trabajemos juntos</span>
         </h2>
 
-        <!-- Nuevo contenedor de formulario de 2 columnas -->
         <div class="max-w-4xl mx-auto">
             <div class="p-8 md:p-10 contact-form-card grid md:grid-cols-2 gap-8 md:gap-12 text-center md:text-left">
 
-                <!-- Columna Izquierda: Formulario (Input Data) -->
-                <div class="space-y-4"> <!-- Reducido espacio vertical -->
+                <!-- Columna Izquierda -->
+                <div class="space-y-4">
                     <p class="text-xl font-bold mb-4" style="color: var(--primary-text-color);"
                         data-key="contact_greeting">Hola,</p>
 
-                    <form id="contact-form" class="space-y-6">
+                    <form id="contact-form" action="https://formcarry.com/s/z_3Rrrsdm9O" method="POST"
+                        accept-charset="UTF-8" class="space-y-6">
 
-                        <!-- Nombre y Apellido -->
+
                         <div class="contact-input-group">
                             <label for="name" data-key="label_name">Nombre y Apellido</label>
                             <input type="text" id="name" name="name" required
                                 placeholder="Ingresa tu nombre y apellido aquí" data-key="placeholder_name">
                         </div>
 
-                        <!-- Email -->
                         <div class="contact-input-group">
                             <label for="email" data-key="label_email">Email</label>
                             <input type="email" id="email" name="email" required placeholder="nombre@mail.com"
                                 data-key="placeholder_email">
                         </div>
 
-                        <!-- MENSAJE/DETALLES (Combinando con botón de enviar) -->
                         <div class="contact-input-group">
                             <label for="message" data-key="label_message_optional">Cuéntame de tu Proyecto
                                 (Opcional)</label>
@@ -1177,16 +480,14 @@
                     </form>
                 </div>
 
-                <!-- Columna Derecha: Mensaje Inspirador (MindDev) -->
                 <div class="flex flex-col justify-center items-center md:items-start text-center md:text-left p-6"
                     style="background-color: var(--background); border-radius: 4px;">
                     <i data-lucide="rocket" class="w-10 h-10 mb-4" style="color: var(--lila);"></i>
-                    <!-- Cohete Reinsertado -->
                     <p class="contact-highlight-text" data-key="contact_highlight_1">
                         Da el <strong>siguiente paso</strong> con tu <strong>proyecto</strong>
                     </p>
-                    <p class="text-sm mt-4" style="color: var(--secondary-text-color);" data-key="contact_highlight_2">
-                        Hablemos de tu idea, rediseño web, o **estrategia digital**. ¡La **transformación** comienza
+                    <p class="text-sm mt-4" style="color: var(--lila);" data-key="contact_highlight_2">
+                        Hablemos de tu idea, rediseño web, o estrategia digital. ¡La transformación comienza
                         ahora!
                     </p>
                 </div>
@@ -1194,27 +495,25 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10" style="background-color: var(--background);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-            <!-- Redes Sociales y Email (Horizontal Centrado) -->
             <div class="footer-content">
                 <a href="mailto:tu.email@example.com" class="footer-email font-mono">
-                    tu.email@example.com
+                    rcardoramos@outlook.com
                 </a>
 
                 <div class="footer-social-links">
-                    <a href="https://github.com/tu_usuario" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/rcardoramos" target="_blank" aria-label="GitHub">
                         <i data-lucide="github" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://linkedin.com/in/tu_perfil" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/rcardo-ramos/" target="_blank" aria-label="LinkedIn">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://twitter.com/tu_usuario" target="_blank" aria-label="Twitter">
+                    <a href="https://x.com/rcardoramos26" target="_blank" aria-label="Twitter">
                         <i data-lucide="twitter" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://instagram.com/tu_usuario" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/_rcardoramos/" target="_blank" aria-label="Instagram">
                         <i data-lucide="camera" class="w-5 h-5"></i>
                     </a>
                 </div>
@@ -1222,529 +521,15 @@
 
             <p class="text-xs font-mono" style="color: var(--secondary-text-color);" id="footer-credits-text">
                 Desarrollado por Ricardo Ramos | Diseño inspirado en <a href="https://www.brittanychiang.com/"
-                    target="_blank" style="color: var(--lila);" class="job-details-company-link">Brittany Chiang</a>
+                    target="_blank" style="color: #06f3d3;" class="job-details-company-link">Chiang</a>
             </p>
         </div>
     </footer>
 
-    <!-- JS for Lucide Icons, Form Handling, and Job Tabs -->
-    <script>
-        // COMENTARIO IMPORTANTE: ESTE OBJETO CONTIENE TODO EL TEXTO ESTATICO DE LA PAGINA PARA TRADUCCION. 
-        // PARA AÑADIR OTROS IDIOMAS (ej. 'fr'), DUPLICA EL OBJETO 'en' Y EDITA LOS VALORES.
-        const translations = {
-            es: {
-                page_title: "Ricardo Ramos | Desarrollador Frontend",
-                nav_about: "Sobre Mí",
-                nav_skills: "Skills",
-                nav_experience: "Experiencia",
-                nav_projects: "Proyectos",
-                nav_contact: "Contacto",
-                nav_cv: "CV",
-
-                hero_greeting: "Hola, mi nombre es",
-                hero_title: "Frontend Developer",
-
-                section_about: "Sobre Mí",
-                section_skills: "Tech Stack & Habilidades",
-                section_experience: "Mi Trayectoria",
-                section_projects: "Proyectos Destacados",
-                section_contact_heading: "Trabajemos juntos",
-
-                skills_subtitle: "Tecnologías que domino para crear experiencias digitales de alto impacto.",
-
-                // Textos de Tech Stack (Optimizado)
-                tech_group_frontend: "Frontend & Web",
-                desc_high_performance: "Frameworks Web de Alto Rendimiento",
-                desc_robust_spas: "Desarrollo de SPAs robustas",
-                desc_modern_base: "Base del desarrollo moderno",
-                desc_ui_ux: "Diseño UI/UX adaptable",
-
-                tech_group_backend_db: "Backend & Bases de Datos",
-                desc_apis_concurrency: "APIs REST/GraphQL y Backend (Node.js)",
-                desc_nosql_systems: "Bases de Datos NoSQL Flexibles (MongoDB/Firestore)",
-                desc_sql_systems: "Sistemas SQL Relacionales (PostgreSQL/MySQL)",
-
-                tech_group_tools_practices: "Herramientas & Prácticas",
-                desc_version_control: "Control de Versiones y Colaboración (Git/GitHub)",
-                desc_agile_management: "Gestión Ágil de Proyectos (Scrum/Jira)",
-                desc_ux_expertise: "Prototipado, Diseño Visual y UX (Figma)",
-                desc_hosting: "Despliegue y Hosting de Apps (Vercel/Netlify)",
-
-                // Textos Sobre Mí
-                about_p1: '¡Hola! Soy <strong style="color: var(--lila);">Ricardo Ramos</strong>, desarrollador frontend y fundador de <a href="https://minddev.com" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">Minddev</a>, una startup tech enfocada en crear <strong style="color: var(--lila);">experiencias digitales únicas</strong> que combinan diseño, tecnología y estrategia.',
-                about_p2: 'Desde que inicié mi camino en el desarrollo web en <strong style="color: var(--lila);">2022</strong>, descubrí que el código es más que funcionalidad: es una forma de transformar ideas en <strong style="color: var(--lila);">productos con propósito</strong>. Cada proyecto que construyo busca ser tan <strong style="color: var(--lila);">intuitivo como impactante</strong>, cuidando la estética, la accesibilidad y el rendimiento.',
-                about_p3: 'Actualmente, compagino mis estudios de <strong style="color: var(--lila);">Computación e Informática</strong> con la aplicación práctica de tecnologías como <strong style="color: var(--lila);">React, TypeScript y Tailwind CSS</strong>. En Minddev, lidero el desarrollo de soluciones web modernas, donde la <strong style="color: var(--lila);">innovación</strong> y la atención al detalle son el estándar.',
-                about_p4: 'Mi meta es seguir evolucionando como frontend developer y <strong style="color: var(--lila);">emprendedor tecnológico</strong>, impulsando proyectos que conecten personas con marcas a través de experiencias web memorables.',
-                about_quote: '✨ Tu visión puede ser la próxima gran experiencia digital.',
-
-                // Textos de Proyectos
-                proj1_category: "Desarrollo Web",
-                proj1_title_pre: "Página Web",
-                proj1_title_post: "Ecommerce Simple",
-                proj1_desc: "Sitio web responsivo y de alto rendimiento utilizando solo lenguajes nativos y Tailwind CSS para un diseño ágil.",
-
-                proj2_category: "Web Moderna",
-                proj2_title_pre: "Landing Page",
-                proj2_title_post: "Empresa SaaS",
-                proj2_desc: "Landing page de alto impacto visual y alta velocidad de carga, construida sobre React y Vite para modernidad.",
-
-                proj3_category: "Aplicación Web",
-                proj3_title_pre: "App SPA",
-                proj3_title_post: "App Vue",
-                proj3_desc: "Aplicación de una sola página (SPA) desarrollada con Vue y Vite, enfocada en una experiencia de usuario reactiva y fluida.",
-                btn_view_repos: "Ver Repositorios Completos",
-
-                // Textos de Contacto
-                contact_greeting: "Hola,",
-                label_name: "Nombre y Apellido",
-                placeholder_name: "Ingresa tu nombre y apellido aquí",
-                label_email: "Email",
-                placeholder_email: "nombre@mail.com",
-                label_message_optional: "Cuéntame de tu Proyecto (Opcional)",
-                placeholder_message: "Descripción breve de lo que necesitas...",
-                btn_send_code: "¡Enviar Código!",
-                contact_highlight_1: 'Da el <strong>siguiente paso</strong> con tu <strong>proyecto</strong>',
-                contact_highlight_2: 'Hablemos de tu idea, rediseño web, o **estrategia digital**. ¡La **transformación** comienza ahora!',
-
-                // Footer
-                footer_credits: 'Desarrollado por Ricardo Ramos | Diseño inspirado en <a href="https://www.brittanychiang.com/" target="_blank" style="color: var(--lila);" class="job-details-company-link">Brittany Chiang</a>',
-            },
-            en: {
-                page_title: "Ricardo Ramos | Frontend Developer",
-                nav_about: "About Me",
-                nav_skills: "Skills",
-                nav_experience: "Experience",
-                nav_projects: "Projects",
-                nav_contact: "Contact",
-                nav_cv: "CV",
-
-                hero_greeting: "Hello, my name is",
-                hero_title: "Frontend Developer",
-
-                section_about: "About Me",
-                section_skills: "Tech Stack & Skills",
-                section_experience: "My Career Path",
-                section_projects: "Featured Projects",
-                section_contact_heading: "Let's work together",
-
-                skills_subtitle: "Technologies I master to create high-impact digital experiences.",
-
-                // Textos de Tech Stack (Optimizado)
-                tech_group_frontend: "Frontend & Web",
-                desc_high_performance: "High-Performance Web Frameworks",
-                desc_robust_spas: "Development of Robust SPAs",
-                desc_modern_base: "Base of Modern Development",
-                desc_ui_ux: "Adaptive UI/UX Design",
-
-                tech_group_backend_db: "Backend & Databases",
-                desc_apis_concurrency: "REST/GraphQL APIs and Backend (Node.js)",
-                desc_nosql_systems: "Flexible NoSQL Databases (MongoDB/Firestore)",
-                desc_sql_systems: "Relational SQL Systems (PostgreSQL/MySQL)",
-                desc_data_ml: "Data Analysis and Machine Learning (Python/Django)",
-
-                tech_group_tools_practices: "Tools & Practices",
-                desc_version_control: "Version Control and Collaboration (Git/GitHub)",
-                desc_agile_management: "Agile Project Management (Scrum/Jira)",
-                desc_ux_expertise: "Prototyping, Visual Design, and UX (Figma)",
-                desc_hosting: "App Deployment and Hosting (Vercel/Netlify)",
-
-                // Textos Sobre Mí (English versions)
-                about_p1: 'Hello! I\'m <strong style="color: var(--lila);">Ricardo Ramos</strong>, a frontend developer and founder of <a href="https://minddev.com" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">Minddev</a>, a tech startup focused on creating <strong style="color: var(--lila);">unique digital experiences</strong> that combine design, technology, and strategy.',
-                about_p2: 'Since I began my web development journey in <strong style="color: var(--lila);">2022</strong>, I discovered that code is more than functionality—it\'s a way to transform ideas into <strong style="color: var(--lila);">purposeful products</strong>. Every project I build aims to be as <strong style="color: var(--lila);">intuitive as it is impactful</strong>, focusing on aesthetics, accessibility, and performance.',
-                about_p3: 'I currently balance my <strong style="color: var(--lila);">Computer Science and Informatics</strong> studies with practical application of technologies like <strong style="color: var(--lila);">React, TypeScript, and Tailwind CSS</strong>. At Minddev, I lead the development of modern web solutions where <strong style="color: var(--lila);">innovation</strong> and attention to detail are the standard.',
-                about_p4: 'My goal is to continue evolving as a frontend developer and <strong style="color: var(--lila);">technology entrepreneur</strong>, driving projects that connect people with brands through memorable web experiences.',
-                about_quote: '✨ Your vision can be the next great digital experience.',
-
-                // Project Texts
-                proj1_category: "Web Development",
-                proj1_title_pre: "Website",
-                proj1_title_post: "Simple Ecommerce",
-                proj1_desc: "Responsive and high-performance website using only native languages and Tailwind CSS for agile design.",
-
-                proj2_category: "Modern Web",
-                proj2_title_pre: "Landing Page",
-                proj2_title_post: "SaaS Company",
-                proj2_desc: "High-impact visual and fast-loading landing page, built on React and Vite for modernity.",
-
-                proj3_category: "Web Application",
-                proj3_title_pre: "SPA App",
-                proj3_title_post: "Vue App",
-                proj3_desc: "Single Page Application (SPA) developed with Vue and Vite, focused on a reactive and fluid user experience.",
-                btn_view_repos: "View Full Repositories",
-
-                // Contact Texts
-                contact_greeting: "Hi there,",
-                label_name: "Full Name",
-                placeholder_name: "Enter your first and last name here",
-                label_email: "Email",
-                placeholder_email: "name@mail.com",
-                label_message_optional: "Tell me about your Project (Optional)",
-                placeholder_message: "Brief description of what you need...",
-                btn_send_code: "Send Code!",
-                contact_highlight_1: 'Take the <strong>next step</strong> with your <strong>project</strong>',
-                contact_highlight_2: 'Let\'s talk about your idea, web redesign, or **digital strategy**. The **transformation** starts now!',
-
-                // Footer
-                footer_credits: 'Developed by Ricardo Ramos | Design inspired by <a href="https://www.brittanychiang.com/" target="_blank" style="color: var(--lila);" class="job-details-company-link">Brittany Chiang</a>',
-            }
-        };
-
-        let currentLang = 'es';
-
-        // Función para actualizar todos los textos de la página
-        function updateText(lang) {
-            const t = translations[lang];
-
-            // Helper function to safely update element content or placeholder
-            const updateElement = (selector, content, isPlaceholder = false) => {
-                const el = document.querySelector(selector);
-                if (el) {
-                    if (isPlaceholder) {
-                        el.placeholder = content;
-                    } else if (selector.includes('_html')) {
-                        el.innerHTML = content;
-                    } else {
-                        el.textContent = content;
-                    }
-                }
-            };
-
-            // Helper function for innerHTML (to preserve child tags)
-            const updateElementHTML = (selector, content) => {
-                const el = document.querySelector(selector);
-                if (el) {
-                    el.innerHTML = content;
-                }
-            };
-
-
-            // Update Page Title
-            updateElement('#page-title', t.page_title);
-
-            // Update Navbar links
-            document.querySelectorAll('.nav-link').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (el) el.textContent = t[key];
-            });
-
-            // Update CV Button
-            const cvButton = document.querySelector('.cv-button-compact');
-            if (cvButton) cvButton.textContent = t.nav_cv;
-
-            // Update Hero Section
-            updateElement('[data-key="hero_greeting"]', t.hero_greeting);
-            updateElement('[data-key="hero_title"]', t.hero_title);
-
-            // Update Section Headings
-            updateElement('[data-key="section_about"]', t.section_about);
-            updateElement('[data-key="section_skills"]', t.section_skills); // Reinsertado
-            updateElement('[data-key="section_experience"]', t.section_experience);
-            updateElement('[data-key="section_projects"]', t.section_projects);
-            updateElement('[data-key="section_contact_heading"]', t.section_contact_heading);
-
-            // Update Skills Subtitle
-            updateElement('[data-key="skills_subtitle"]', t.skills_subtitle);
-
-            // Update About Me (using innerHTML for strong/anchor tags)
-            updateElementHTML('[data-key="about_p1"]', t.about_p1);
-            updateElementHTML('[data-key="about_p2"]', t.about_p2);
-            updateElementHTML('[data-key="about_p3"]', t.about_p3);
-            updateElementHTML('[data-key="about_p4"]', t.about_p4);
-            updateElementHTML('[data-key="about_quote"]', t.about_quote);
-
-            // Update Project Details
-            updateElement('[data-key="proj1_category"]', t.proj1_category);
-            updateElement('[data-key="proj1_title_pre"]', t.proj1_title_pre);
-            updateElement('[data-key="proj1_title_post"]', t.proj1_title_post);
-            updateElement('[data-key="proj1_desc"]', t.proj1_desc);
-
-            updateElement('[data-key="proj2_category"]', t.proj2_category);
-            updateElement('[data-key="proj2_title_pre"]', t.proj2_title_pre);
-            updateElement('[data-key="proj2_title_post"]', t.proj2_title_post);
-            updateElement('[data-key="proj2_desc"]', t.proj2_desc);
-
-            updateElement('[data-key="proj3_category"]', t.proj3_category);
-            updateElement('[data-key="proj3_title_pre"]', t.proj3_title_pre);
-            updateElement('[data-key="proj3_title_post"]', t.proj3_title_post);
-            updateElement('[data-key="proj3_desc"]', t.proj3_desc);
-
-            updateElement('[data-key="btn_view_repos"]', t.btn_view_repos);
-
-
-            // Update Tech Stack Cards (Descriptions and Titles)
-            updateElement('[data-key="tech_group_frontend"]', t.tech_group_frontend);
-            updateElement('[data-key="desc_high_performance"]', t.desc_high_performance);
-            updateElement('[data-key="desc_robust_spas"]', t.desc_robust_spas);
-            updateElement('[data-key="desc_modern_base"]', t.desc_modern_base);
-            updateElement('[data-key="desc_ui_ux"]', t.desc_ui_ux);
-
-            updateElement('[data-key="tech_group_backend_db"]', t.tech_group_backend_db);
-            updateElement('[data-key="desc_apis_concurrency"]', t.desc_apis_concurrency);
-            updateElement('[data-key="desc_nosql_systems"]', t.desc_nosql_systems);
-            updateElement('[data-key="desc_sql_systems"]', t.desc_sql_systems);
-            updateElement('[data-key="desc_data_ml"]', t.desc_data_ml); // Mantenemos la clave por si la descripción de Python cambia
-
-            updateElement('[data-key="tech_group_tools_practices"]', t.tech_group_tools_practices);
-            updateElement('[data-key="desc_version_control"]', t.desc_version_control);
-            updateElement('[data-key="desc_agile_management"]', t.desc_agile_management);
-            updateElement('[data-key="desc_ux_expertise"]', t.desc_ux_expertise);
-            updateElement('[data-key="desc_hosting"]', t.desc_hosting);
-
-
-            // Update Contact Form
-            updateElement('[data-key="contact_greeting"]', t.contact_greeting);
-
-            updateElement('[data-key="label_name"]', t.label_name);
-            updateElement('[data-key="placeholder_name"]', t.placeholder_name, true);
-
-            updateElement('[data-key="label_email"]', t.label_email);
-            updateElement('[data-key="placeholder_email"]', t.placeholder_email, true);
-
-            updateElement('[data-key="label_message_optional"]', t.label_message_optional);
-            updateElement('[data-key="placeholder_message"]', t.placeholder_message, true);
-
-            const btnSend = document.querySelector('[data-key="btn_send_code"]');
-            if (btnSend) btnSend.innerHTML = t.btn_send_code + ' <i data-lucide="send" class="w-5 h-5 ml-2"></i>';
-
-            updateElementHTML('[data-key="contact_highlight_1"]', t.contact_highlight_1);
-            updateElementHTML('[data-key="contact_highlight_2"]', t.contact_highlight_2.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
-
-            // Update Footer
-            document.getElementById('footer-credits-text').innerHTML = t.footer_credits;
-
-            // Update Job Details (requires re-initialization)
-            if (document.getElementById('job-tabs')) {
-                // Remove existing tabs
-                document.getElementById('job-tabs').innerHTML = '';
-                // Re-initialize tabs with new language texts
-                initJobTabs();
-            }
-
-            // Update Lang Selector UI
-            document.querySelectorAll('.lang-selector span').forEach(span => {
-                span.classList.remove('active');
-                if (span.getAttribute('data-lang') === lang) {
-                    span.classList.add('active');
-                }
-            });
-
-            currentLang = lang;
-            lucide.createIcons();
-        }
-
-        // Función para cambiar el idioma
-        function switchLanguage(event) {
-            const lang = event.target.getAttribute('data-lang');
-            if (lang && lang !== currentLang) {
-                updateText(lang);
-            }
-        }
-
-        // Attach language switch handlers
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('lang-es').addEventListener('click', switchLanguage);
-            document.getElementById('lang-en').addEventListener('click', switchLanguage);
-        });
-
-        // --- Preloader Script ---
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            // Retraso para que la animación del preloader se complete antes de desaparecer
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                // Restablecer el overflow-y del body después de la carga
-                document.body.style.overflowY = 'auto';
-            }, 1500); // 1.5s total: 0.8s de animación + 0.7s de espera
-        });
-
-
-        // Inicializa los íconos de Lucide
-        lucide.createIcons();
-
-        // --- Job Tabs Data ---
-        // COMENTARIO: MODIFICAR LOS DETALLES DE LAS EXPERIENCIAS DE TRABAJO EN AMBOS IDIOMAS
-        const jobData = [
-            {
-                company: "MindDev Perú",
-                link: "https://minddev.com",
-                title: { es: "Founder & CEO / Lead Frontend Developer", en: "Founder & CEO / Lead Frontend Developer" },
-                range: "2022 — Actualidad",
-                location: { es: "Lima, Perú (Híbrido)", en: "Lima, Peru (Hybrid)" },
-                description: {
-                    es: [
-                        "Líder visionario detrás de MindDev, con enfoque en la innovación ágil y la expansión de la compañía en el ámbito de la transformación digital.",
-                        "Responsable de la definición de la arquitectura técnica y las mejores prácticas de desarrollo Frontend, priorizando la creación de experiencias de usuario memorables y accesibles.",
-                        "Fomento de un entorno de desarrollo de alto rendimiento, aplicando metodologías de microservicios y asegurando la escalabilidad de todas las soluciones web.",
-                        "Participación activa como desarrollador Frontend en proyectos clave, asegurando la entrega de código limpio, mantenible y de alta calidad."
-                    ],
-                    en: [
-                        "Visionary leader behind MindDev, focused on agile innovation and company expansion in the digital transformation sector.",
-                        "Responsible for defining the technical architecture and Frontend development best practices, prioritizing the creation of memorable and accessible user experiences.",
-                        "Fostering a high-performance development environment, applying microservice methodologies and ensuring the scalability of all web solutions.",
-                        "Active participation as a Frontend developer in key projects, ensuring the delivery of clean, maintainable, and high-quality code."
-                    ]
-                },
-                stack: "React · Next.js · TypeScript · Liderazgo · Arquitectura de Microservicios · Agile · Git"
-            },
-            {
-                company: "Intercapital Perú",
-                link: "https://intercapitalperu.com",
-                title: { es: "Frontend Web Developer", en: "Frontend Web Developer" },
-                range: "Agosto. 2024 – Actualidad",
-                location: { es: "Lima, Perú (Presencial)", en: "Lima, Peru (On-site)" },
-                description: {
-                    es: [
-                        "Encargado del desarrollo, optimización y mantenimiento del sitio web principal de Intercapital Perú y Dominick Pro, priorizando rendimiento, accesibilidad y experiencia de usuario.",
-                        "Implementación de optimizaciones de rendimiento (caching y lazy loading), logrando reducir los tiempos de carga en más del 35% y mejorando la estabilidad de la plataforma.",
-                        "Aplicación de prácticas avanzadas de SEO on-page y accesibilidad (WCAG), lo que resultó en un incremento significativo en la visibilidad orgánica.",
-                        "Desarrollo de la interfaz bajo un enfoque mobile-first utilizando Tailwind CSS, asegurando una experiencia fluida en múltiples dispositivos.",
-                        "Integración de formularios de captura de leads seguros y funcionales (FormSubmit/Formcarry), consolidando la presencia digital y mejorando la conversión."
-                    ],
-                    en: [
-                        "Responsible for the development, optimization, and maintenance of Intercapital Perú and Dominick Pro's main website, prioritizing performance, accessibility, and user experience.",
-                        "Implemented performance optimizations (caching and lazy loading), achieving a reduction in load times by over 35% and improving platform stability.",
-                        "Applied advanced SEO on-page and accessibility (WCAG) practices, resulting in a significant increase in organic visibility.",
-                        "Developed the interface using a mobile-first approach with Tailwind CSS, ensuring a smooth experience across multiple devices.",
-                        "Integrated secure and functional lead capture forms (FormSubmit/Formcarry), consolidating digital presence and improving lead conversion."
-                    ]
-                },
-                stack: "HTML5 · CSS3 · JavaScript · Tailwind CSS · PHP · Git · GitHub · CPanel"
-            },
-            {
-                company: "JFG Corporation",
-                link: "https://billstech.com",
-                title: { es: "Frontend Developer", en: "Frontend Developer" },
-                range: "Abril. 2023 – Enero. 2024",
-                location: { es: "Lima, Perú (Remoto)", en: "Lima, Peru (Remote)" },
-                description: {
-                    es: [
-                        "Participación en el desarrollo de un aplicativo web integral para la gestión de servicios técnicos, aplicando prácticas modernas de desarrollo frontend para la eficiencia y experiencia de usuario.",
-                        "Construcción de una librería de componentes reutilizables en Storybook siguiendo la metodología Atomic Design, potenciando la escalabilidad del frontend.",
-                        "Diseño e implementación de la arquitectura en React + TypeScript, logrando optimizar el flujo de trabajo del equipo.",
-                        "Desarrollo de pruebas unitarias con Jest, simplificando el flujo de uso y aumentando la satisfacción del usuario en un 30% (medido por retroalimentación).",
-                        "Trabajo activo bajo la metodología Scrum, optimizando la colaboración del equipo."
-                    ],
-                    en: [
-                        "Participated in the development of an integrated web application for technical service management, applying modern frontend development practices for efficiency and user experience.",
-                        "Built a reusable component library in Storybook following the Atomic Design methodology, enhancing frontend scalability.",
-                        "Designed and implemented the architecture in React + TypeScript, optimizing the team's workflow.",
-                        "Developed unit tests with Jest as part of quality assurance best practices, simplifying user flow and increasing user satisfaction by 30% (measured by feedback).",
-                        "Actively worked under the Scrum methodology, optimizing team collaboration."
-                    ]
-                },
-                stack: "React · TypeScript · Storybook · Atomic Design · Jest · Redux · Context API · Node.js · MongoDB · Tailwind CSS · GitHub"
-            }
-        ];
-
-        let activeJob = 0; // Índice de la pestaña activa
-
-        const jobTabsContainer = document.getElementById('job-tabs');
-        const jobDetailsContainer = document.getElementById('job-details');
-
-        // Función para renderizar el contenido de la experiencia
-        function renderJobDetails(job) {
-            const companyLink = job.link ? job.link : '#';
-            const location = job.location ? `<p class="date">${job.location[currentLang] || job.location.es}</p>` : '';
-
-            jobDetailsContainer.innerHTML = `
-                <h3 class="text-xl font-bold mb-1">${job.title[currentLang] || job.title.es} <a href="${companyLink}" target="_blank" style="color: var(--lila);" class="job-details-company-link">@ ${job.company}</a></h3>
-                <p class="date">${job.range}</p>
-                ${location}
-                <div class="mt-4 space-y-4">
-                    ${(job.description[currentLang] || job.description.es).map(item => `
-                        <p class="text-sm" style="color: var(--secondary-text-color);">${item}</p>
-                    `).join('')}
-                </div>
-                
-                <div class="mt-6">
-                    <p class="font-bold text-sm mb-2" style="color: var(--primary-text-color);">Stack Tecnológico:</p>
-                    <p class="text-xs font-mono" style="color: var(--secondary-text-color);">${job.stack}</p>
-                </div>
-            `;
-            lucide.createIcons(); // Vuelve a inicializar iconos dentro del contenido
-        }
-
-        // Función para cambiar la pestaña activa
-        function changeTab(index) {
-            // 1. Quitar clase 'active' de todos los botones
-            const buttons = jobTabsContainer.querySelectorAll('.job-tab-button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // 2. Marcar el botón correcto como activo
-            if (buttons[index]) {
-                buttons[index].classList.add('active');
-            }
-
-            // 3. Renderizar el nuevo contenido
-            renderJobDetails(jobData[index]);
-            activeJob = index;
-        }
-
-        // Función de inicialización
-        function initJobTabs() {
-            if (!jobTabsContainer) return; // Salir si el contenedor no existe
-
-            jobData.forEach((job, index) => {
-                const button = document.createElement('button');
-                button.classList.add('job-tab-button', 'whitespace-nowrap', 'text-sm');
-                button.textContent = job.company;
-                button.setAttribute('data-index', index);
-
-                // Añadir listener de clic
-                button.addEventListener('click', () => {
-                    changeTab(index);
-                });
-
-                jobTabsContainer.appendChild(button);
-            });
-
-            // Mostrar el primer trabajo por defecto
-            if (jobData.length > 0) {
-                changeTab(activeJob);
-            }
-        }
-
-        // --- Inicialización del Portafolio ---
-
-        // Función que se ejecuta al cargar la página
-        document.addEventListener('DOMContentLoaded', function () {
-            // Inicializar Job Tabs
-            initJobTabs();
-            // Cargar textos en español por defecto
-            updateText('es');
-
-            // Manejo del formulario
-            document.getElementById('contact-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const form = e.target;
-                const messageDiv = document.getElementById('form-message');
-                const submitButton = form.querySelector('button[type="submit"]');
-
-                // Simulación de envío
-                submitButton.disabled = true;
-                submitButton.innerHTML = 'Enviando... <i data-lucide="loader" class="w-5 h-5 ml-2 animate-spin"></i>';
-                lucide.createIcons();
-
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = (currentLang === 'es' ? '¡Enviar Código!' : 'Send Code!') + ' <i data-lucide="send" class="w-5 h-5 ml-2"></i>';
-                    lucide.createIcons();
-
-                    messageDiv.classList.remove('hidden');
-                    messageDiv.style.color = 'var(--lila)';
-                    messageDiv.innerHTML = (currentLang === 'es' ? "¡Mensaje Enviado con Éxito! Me pondré en contacto pronto para discutir tu proyecto." : "Message Sent Successfully! I will get back to you shortly to discuss your project.");
-
-                    form.reset();
-
-                    setTimeout(() => {
-                        messageDiv.classList.add('hidden');
-                    }, 5000);
-
-                }, 2000);
-            });
-        });
-    </script>
+    <script src="./js/preloader.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/jobs.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>

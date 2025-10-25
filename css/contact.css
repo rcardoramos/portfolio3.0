@@ -1,0 +1,72 @@
+ .contact-form-card {
+     background-color: #2a2e45;
+     border: 2px solid transparent;
+     border-radius: 8px;
+     transition: var(--transition);
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ }
+
+ .contact-form-card:hover {
+     border-color: rgba(37, 143, 230, 0.5);
+     box-shadow: 0 0 20px rgba(37, 143, 230, 0.5);
+     transform: translateY(-3px);
+ }
+
+ .contact-input-group {
+     text-align: left;
+     margin-bottom: 1.5rem;
+ }
+
+ .contact-input-group label {
+     display: block;
+     color: var(--primary-text-color);
+     font-size: 0.9rem;
+     font-weight: 600;
+     margin-bottom: 0.25rem;
+ }
+
+ .contact-input-group input,
+ .contact-input-group textarea,
+ .contact-input-group select {
+     border: none;
+     border-bottom: 1px solid #334155;
+     background-color: transparent;
+     padding: 0.5rem 0;
+     font-size: 1rem;
+     color: var(--primary-text-color);
+     width: 100%;
+     transition: border-bottom-color 0.3s;
+ }
+
+ .contact-input-group input:focus,
+ .contact-input-group textarea:focus,
+ .contact-input-group select:focus {
+     outline: none;
+     border-bottom-color: var(--lila);
+ }
+
+ .contact-highlight-text {
+     font-size: 2.25rem;
+     line-height: 1.1;
+     font-weight: 800;
+     color: var(--primary-text-color);
+ }
+
+ .contact-highlight-text strong {
+     color: var(--lila);
+     font-weight: 900;
+ }
+
+ .fun-input {
+     background-color: #1a1e30;
+     border: 1px solid #334155;
+     color: var(--primary-text-color);
+     transition: var(--transition);
+     padding: 0.75rem;
+ }
+
+ .fun-input:focus {
+     outline: none;
+     border-color: var(--lila);
+     box-shadow: 0 0 0 2px rgba(37, 228, 230, 0.4);
+ }
