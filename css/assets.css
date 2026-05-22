@@ -1,55 +1,61 @@
- /* Estilos para el hover de la foto */
- #profile-photo-container {
-     position: relative;
-     width: 300px;
-     height: 300px;
-     border-radius: 4px;
-     background-color: var(--lila);
-     transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-     cursor: pointer;
-     border: 2px solid transparent;
-     box-shadow: 0 10px 30px -15px rgba(37, 228, 230, 0.2);
- }
+/* Estilos para el hover de la foto */
+#profile-photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
+    background-color: var(--lila);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 30px -15px rgba(37, 228, 230, 0.2);
+}
 
- #profile-photo {
-     filter: grayscale(100%) contrast(1) brightness(90%);
-     mix-blend-mode: multiply;
-     transition: all 0.5s ease;
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     border-radius: 4px;
-     border: 2px solid transparent;
- }
+#profile-photo {
+    filter: grayscale(100%) contrast(1) brightness(90%);
+    mix-blend-mode: multiply;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
 
- #profile-photo-container:hover #profile-photo {
-     filter: none;
-     mix-blend-mode: normal;
-     border-color: var(--lila);
- }
+#profile-photo-container:hover #profile-photo {
+    filter: none;
+    mix-blend-mode: normal;
+    border-color: var(--lila);
+}
 
- #profile-photo-container:hover {
-     box-shadow: 0 0 0 8px rgba(11, 132, 245, 0.2);
-     border-color: var(--lila);
-     transform: scale(1.03);
- }
+#profile-photo-container:hover {
+    box-shadow: 0 0 0 8px rgba(11, 132, 245, 0.2);
+    border-color: var(--lila);
+    transform: scale(1.03);
+}
 
  /* --- Project Card --- */
  .project-card {
-     background-color: #2a2e45;
-     border-radius: 4px;
-     transition: var(--transition);
+     background: linear-gradient(135deg, rgba(42, 46, 69, 0.4) 0%, rgba(30, 33, 50, 0.6) 100%);
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+     border: 1px solid rgba(122, 162, 247, 0.1);
+     border-radius: 12px;
+     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                 box-shadow 0.4s ease, 
+                 border-color 0.4s ease;
      min-height: 280px;
-     padding: 1.5rem;
+     padding: 1.75rem;
      display: flex;
      flex-direction: column;
      justify-content: space-between;
  }
 
  .project-card:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 10px 30px -15px rgba(12, 112, 206, 0.514);
-     border-color: var(--lila);
+     transform: translateY(-8px);
+     border-color: rgba(122, 162, 247, 0.5);
+     box-shadow: 0 20px 40px -15px rgba(122, 162, 247, 0.25), 
+                 0 0 15px rgba(122, 162, 247, 0.1);
  }
 
  .project-category {

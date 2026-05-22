@@ -36,3 +36,14 @@
      color: var(--lila);
      text-decoration: underline;
  }
+
+ .footer-social-links a svg {
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     stroke: currentColor;
+     fill: none;
+     stroke-width: 2;
+     stroke-linecap: round;
+     stroke-linejoin: round;
+ }

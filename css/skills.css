@@ -1,34 +1,40 @@
- .tech-card {
-     background-color: transparent;
-     padding: 1rem 0;
-     border-radius: 0;
-     transition: background-color 0.3s, border-left 0.3s, transform 0.3s;
-     border-bottom: 1px solid #2a2e45;
-     border-left: 3px solid transparent;
- }
+.tech-card {
+    background: rgba(30, 33, 50, 0.4);
+    border: 1px solid rgba(122, 162, 247, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
 
- .tech-card:hover {
-     background-color: rgba(37, 228, 230, 0.05);
-     transform: translateX(5px);
-     border-left: 3px solid var(--lila);
-     box-shadow: none;
- }
+.tech-card:hover {
+    background: rgba(42, 46, 69, 0.6);
+    border-color: var(--lila);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px -10px rgba(122, 162, 247, 0.3), 
+                0 0 15px rgba(6, 243, 211, 0.15);
+}
 
- .tech-category-title {
-     color: var(--primary-text-color);
-     font-weight: 700;
-     font-size: 1.5rem;
-     margin-bottom: 1.5rem;
-     padding-bottom: 5px;
-     border-bottom: 1px solid #334155;
-     display: block;
- }
+.tech-category-title {
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #334155;
+    display: block;
+}
 
- .tech-card .lucide {
-     width: 28px;
-     height: 28px;
- }
+.tech-card .lucide {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
 
- .tech-label {
-     display: none !important;
- }
+.tech-card:hover .lucide {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.tech-label {
+    display: none !important;
+}

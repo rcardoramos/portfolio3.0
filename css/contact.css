@@ -1,72 +1,100 @@
- .contact-form-card {
-     background-color: #2a2e45;
-     border: 2px solid transparent;
-     border-radius: 8px;
-     transition: var(--transition);
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
- }
+.contact-form-card {
+    background: linear-gradient(135deg, rgba(42, 46, 69, 0.4) 0%, rgba(30, 33, 50, 0.6) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(122, 162, 247, 0.15);
+    border-radius: 16px;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
 
- .contact-form-card:hover {
-     border-color: rgba(37, 143, 230, 0.5);
-     box-shadow: 0 0 20px rgba(37, 143, 230, 0.5);
-     transform: translateY(-3px);
- }
+.contact-form-card:hover {
+    border-color: rgba(122, 162, 247, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(122, 162, 247, 0.25), 
+                0 0 20px rgba(6, 243, 211, 0.1);
+    transform: translateY(-5px);
+}
 
- .contact-input-group {
-     text-align: left;
-     margin-bottom: 1.5rem;
- }
+.contact-input-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
 
- .contact-input-group label {
-     display: block;
-     color: var(--primary-text-color);
-     font-size: 0.9rem;
-     font-weight: 600;
-     margin-bottom: 0.25rem;
- }
+.contact-input-group label {
+    display: block;
+    color: var(--secondary-text-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
 
- .contact-input-group input,
- .contact-input-group textarea,
- .contact-input-group select {
-     border: none;
-     border-bottom: 1px solid #334155;
-     background-color: transparent;
-     padding: 0.5rem 0;
-     font-size: 1rem;
-     color: var(--primary-text-color);
-     width: 100%;
-     transition: border-bottom-color 0.3s;
- }
+.contact-input-group:focus-within label {
+    color: var(--lila);
+    text-shadow: 0 0 8px rgba(122, 162, 247, 0.2);
+}
 
- .contact-input-group input:focus,
- .contact-input-group textarea:focus,
- .contact-input-group select:focus {
-     outline: none;
-     border-bottom-color: var(--lila);
- }
+.contact-input-group input,
+.contact-input-group textarea,
+.contact-input-group select {
+    border: 1px solid rgba(122, 162, 247, 0.15);
+    background-color: rgba(20, 22, 34, 0.35);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    width: 100%;
+    transition: all 0.3s ease;
+}
 
- .contact-highlight-text {
-     font-size: 2.25rem;
-     line-height: 1.1;
-     font-weight: 800;
-     color: var(--primary-text-color);
- }
+.contact-input-group input:focus,
+.contact-input-group textarea:focus,
+.contact-input-group select:focus {
+    outline: none;
+    border-color: var(--lila);
+    background-color: rgba(20, 22, 34, 0.6);
+    box-shadow: 0 0 12px rgba(122, 162, 247, 0.25), 
+                0 0 0 1px rgba(122, 162, 247, 0.1);
+}
 
- .contact-highlight-text strong {
-     color: var(--lila);
-     font-weight: 900;
- }
+.contact-highlight-text {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--primary-text-color);
+}
 
- .fun-input {
-     background-color: #1a1e30;
-     border: 1px solid #334155;
-     color: var(--primary-text-color);
-     transition: var(--transition);
-     padding: 0.75rem;
- }
+.contact-highlight-text strong {
+    color: var(--lila);
+    font-weight: 900;
+}
 
- .fun-input:focus {
-     outline: none;
-     border-color: var(--lila);
-     box-shadow: 0 0 0 2px rgba(37, 228, 230, 0.4);
- }
+.fun-input {
+    background-color: #1a1e30;
+    border: 1px solid #334155;
+    color: var(--primary-text-color);
+    transition: var(--transition);
+    padding: 0.75rem;
+}
+
+.fun-input:focus {
+    outline: none;
+    border-color: var(--lila);
+    box-shadow: 0 0 0 2px rgba(37, 228, 230, 0.4);
+}
+
+.contact-info-panel {
+    background-color: rgba(30, 33, 50, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(122, 162, 247, 0.05);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-info-panel:hover {
+    border-color: rgba(122, 162, 247, 0.15);
+    background-color: rgba(30, 33, 50, 0.6);
+}
