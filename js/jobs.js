@@ -1,7 +1,43 @@
 const jobData = [
     {
-        company: "MindDev Perú",
-        link: "https://www.minddevperu.com/",
+        company: "Stefanini Group",
+        link: "https://stefanini.com/es/latam/stefanini-peru",
+        title: { es: "Frontend / Mobile Developer", en: "Frontend / Mobile Developer" },
+        range: "Dic. 2025 — Actualidad",
+        location: { es: "Perú (Remoto)", en: "Peru (Remote)" },
+        description: {
+            es: [
+                "<strong>Mobile (Flutter – App de Asistencia)</strong>",
+                "Desarrollé una aplicación móvil para gestión de asistencia, implementando flujos completos desde autenticación hasta visualización de datos en tiempo real.",
+                "Integré APIs REST, gestionando estados y errores para garantizar estabilidad en producción.",
+                "Diseñé componentes reutilizables y UI responsiva, mejorando la experiencia en múltiples dispositivos.",
+                "Participé en decisiones de arquitectura, asegurando escalabilidad y mantenibilidad.",
+                "Adapté lógica de negocio desde web hacia mobile, manteniendo consistencia funcional.",
+                "<strong>Frontend Web (IziPay)</strong>",
+                "Ejecuté remediación de vulnerabilidades críticas y actualización de dependencias, mejorando la seguridad del sistema.",
+                "Optimicé el comportamiento dinámico del iframe de pago, resolviendo problemas de scroll y render tras migración a Vite.",
+                "Participé en la estabilización post-migración a React 19, eliminando errores estructurales del DOM.",
+                "Rediseñé el portal de Developers, mejorando UX, consistencia visual y experiencia de integración."
+            ],
+            en: [
+                "<strong>Mobile (Flutter – Attendance App)</strong>",
+                "Developed a mobile application for attendance management, implementing complete flows from authentication to real-time data visualization.",
+                "Integrated REST APIs, managing states and errors to ensure stability in production.",
+                "Designed reusable components and responsive UI, improving experience across multiple devices.",
+                "Participated in architecture decisions, ensuring scalability and maintainability.",
+                "Adapted business logic from web to mobile, maintaining functional consistency.",
+                "<strong>Frontend Web (IziPay)</strong>",
+                "Executed remediation of critical vulnerabilities and dependency updates, improving system security.",
+                "Optimized the dynamic behavior of the payment iframe, resolving scroll and rendering issues after migrating to Vite.",
+                "Participated in post-migration stabilization to React 19, eliminating structural DOM errors.",
+                "Redesigned the Developers portal, improving UX, visual consistency, and integration experience."
+            ]
+        },
+        stack: "React · TypeScript · Flutter · Dart · Vite · Tailwind · REST APIs · Git"
+    },
+    {
+        company: "MindDev",
+        link: "https://minddev.pe",
         title: { es: "Founder & CEO / Lead Frontend Developer", en: "Founder & CEO / Lead Frontend Developer" },
         range: "2022 — Actualidad",
         location: { es: "Lima, Perú (Híbrido)", en: "Lima, Peru (Hybrid)" },
@@ -68,6 +104,32 @@ const jobData = [
             ]
         },
         stack: "React · TypeScript · Storybook · Atomic Design · Jest · Redux · Context API · Node.js · MongoDB · Tailwind CSS · GitHub"
+    },
+    {
+        company: "Auna",
+        link: "https://auna.org/mx",
+        title: { es: "Mobile Developer Junior", en: "Junior Mobile Developer" },
+        range: "Sept. 2022 — Marzo 2023",
+        location: { es: "México (Remoto)", en: "Mexico (Remote)" },
+        description: {
+            es: [
+                "Desarrollé aplicaciones móviles de salud para la gestión de citas de pacientes utilizando React Native, orientadas a soportar altos volúmenes de usuarios y garantizar una experiencia fluida en dispositivos móviles.",
+                "Implementé arquitectura modular y componentes reutilizables, optimizando la mantenibilidad del código y acelerando el desarrollo de nuevas funcionalidades.",
+                "Integré servicios backend mediante APIs REST, asegurando una comunicación eficiente y manejo robusto de estados y errores en la aplicación.",
+                "Optimicé flujos de usuario y navegación, mejorando la experiencia general y reduciendo fricción en procesos clave como agendamiento y seguimiento de citas.",
+                "Colaboré en la implementación de pipelines de CI/CD (GitLab, Jenkins), automatizando builds y despliegues para entornos móviles.",
+                "Participé en la integración con servicios en AWS (APIs, almacenamiento y monitoreo), contribuyendo a la escalabilidad y rendimiento de la solución."
+            ],
+            en: [
+                "Developed mobile health applications for patient appointment management using React Native, designed to support high user volumes and ensure a smooth experience on mobile devices.",
+                "Implemented modular architecture and reusable components, optimizing code maintainability and accelerating the development of new features.",
+                "Integrated backend services using REST APIs, ensuring efficient communication and robust state and error handling in the application.",
+                "Optimized user flows and navigation, improving the overall experience and reducing friction in key processes such as scheduling and appointment tracking.",
+                "Collaborated in the implementation of CI/CD pipelines (GitLab, Jenkins), automating builds and deployments for mobile environments.",
+                "Participated in integration with AWS services (APIs, storage, and monitoring), contributing to the scalability and performance of the solution."
+            ]
+        },
+        stack: "React Native · TypeScript · REST APIs · Git · CI/CD · AWS"
     }
 ];
 

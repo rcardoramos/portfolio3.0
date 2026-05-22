@@ -38,7 +38,7 @@ const translations = {
         desc_hosting: "Despliegue y Hosting de Apps (Vercel/Netlify)",
 
         // Sobre Mí
-        about_p1: '¡Hola! Soy <strong style="color: var(--lila);">Ricardo Ramos</strong>, desarrollador frontend y fundador de <a href="https://www.minddevperu.com/" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">MindDev</a>, una startup tech enfocada en crear experiencias digitales únicas que combinan diseño, tecnología y estrategia.',
+        about_p1: '¡Hola! Soy <strong style="color: var(--lila);">Ricardo Ramos</strong>, desarrollador frontend y fundador de <a href="https://minddev.pe" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">MindDev</a>, una startup tech enfocada en crear experiencias digitales únicas que combinan diseño, tecnología y estrategia.',
         about_p2: 'Desde que inicié mi camino en el desarrollo web en <strong style="color: var(--lila);">2022</strong>, descubrí que el código es más que funcionalidad: es una forma de transformar ideas en <strong style="color: var(--lila);">productos con propósito</strong>. Cada proyecto que construyo busca ser tan <strong style="color: var(--lila);">intuitivo como impactante</strong>, cuidando la estética, la accesibilidad y el rendimiento.',
         about_p3: 'Actualmente, compagino mis estudios de Computación e Informática con la aplicación práctica de tecnologías como <strong style="color: var(--lila);">React, TypeScript y Tailwind CSS</strong>. En MindDev, lidero el desarrollo de soluciones web modernas, donde la <strong style="color: var(--lila);">innovación</strong> y la atención al detalle son el estándar.',
         about_p4: 'Mi meta es seguir evolucionando como frontend developer y <strong style="color: var(--lila);">emprendedor tecnológico</strong>, impulsando proyectos que conecten personas con marcas a través de experiencias web memorables.',
@@ -59,6 +59,11 @@ const translations = {
         proj3_title_pre: "App SPA",
         proj3_title_post: "App Vue",
         proj3_desc: "Aplicación de una sola página (SPA) desarrollada con Vue y Vite, enfocada en una experiencia de usuario reactiva y fluida.",
+
+        proj4_category: "Aplicación Móvil",
+        proj4_title_pre: "App Asistencia",
+        proj4_title_post: "Demo Flutter",
+        proj4_desc: "Aplicación demo para la gestión y control de asistencia, con inicio de sesión, registro de marcas y visualización en tiempo real.",
         btn_view_repos: "Ver Repositorios Completos",
 
         // Contacto
@@ -115,7 +120,7 @@ const translations = {
         desc_hosting: "App Deployment and Hosting (Vercel/Netlify)",
 
         //  Sobre Mí 
-        about_p1: 'Hello! I\'m <strong style="color: var(--lila);">Ricardo Ramos</strong>, a frontend developer and founder of <a href="https://minddev.com" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">MindDev</a>, a tech startup focused on creating unique digital experiences that combine design, technology, and strategy.',
+        about_p1: 'Hello! I\'m <strong style="color: var(--lila);">Ricardo Ramos</strong>, a frontend developer and founder of <a href="https://minddev.pe" target="_blank" style="color: var(--lila);" class="job-details-company-link font-bold">MindDev</a>, a tech startup focused on creating unique digital experiences that combine design, technology, and strategy.',
         about_p2: 'Since I began my web development journey in <strong style="color: var(--lila);">2022</strong>, I discovered that code is more than functionality—it\'s a way to transform ideas into <strong style="color: var(--lila);">purposeful products</strong>. Every project I build aims to be as <strong style="color: var(--lila);">intuitive as it is impactful</strong>, focusing on aesthetics, accessibility, and performance.',
         about_p3: 'I currently balance my Computer Science and Informatics studies with practical application of technologies like <strong style="color: var(--lila);">React, TypeScript, and Tailwind CSS</strong>. At MindDev, I lead the development of modern web solutions where <strong style="color: var(--lila);">innovation</strong> and attention to detail are the standard.',
         about_p4: 'My goal is to continue evolving as a frontend developer and <strong style="color: var(--lila);">technology entrepreneur</strong>, driving projects that connect people with brands through memorable web experiences.',
@@ -136,6 +141,11 @@ const translations = {
         proj3_title_pre: "SPA App",
         proj3_title_post: "Vue App",
         proj3_desc: "Single Page Application (SPA) developed with Vue and Vite, focused on a reactive and fluid user experience.",
+
+        proj4_category: "Mobile Application",
+        proj4_title_pre: "Attendance App",
+        proj4_title_post: "Flutter Demo",
+        proj4_desc: "Demo application for attendance management and control, featuring login, clock-in/out records, and real-time visualization.",
         btn_view_repos: "View Full Repositories",
 
         // Contact Texts
@@ -225,6 +235,11 @@ function updateText(lang) {
     updateElement('[data-key="proj3_title_pre"]', t.proj3_title_pre);
     updateElement('[data-key="proj3_title_post"]', t.proj3_title_post);
     updateElement('[data-key="proj3_desc"]', t.proj3_desc);
+
+    updateElement('[data-key="proj4_category"]', t.proj4_category);
+    updateElement('[data-key="proj4_title_pre"]', t.proj4_title_pre);
+    updateElement('[data-key="proj4_title_post"]', t.proj4_title_post);
+    updateElement('[data-key="proj4_desc"]', t.proj4_desc);
 
     updateElement('[data-key="btn_view_repos"]', t.btn_view_repos);
 
