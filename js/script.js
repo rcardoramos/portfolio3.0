@@ -25,6 +25,8 @@ const translations = {
         desc_robust_spas: "Desarrollo de SPAs robustas",
         desc_modern_base: "Base del desarrollo moderno",
         desc_ui_ux: "Diseño UI/UX adaptable",
+        desc_flutter: "Apps móviles multiplataforma",
+        desc_react_native: "Desarrollo móvil nativo",
 
         tech_group_backend_db: "Backend & Bases de Datos",
         desc_apis_concurrency: "APIs REST/GraphQL y Backend (Node.js)",
@@ -64,6 +66,16 @@ const translations = {
         proj4_title_pre: "App Asistencia",
         proj4_title_post: "Demo Flutter",
         proj4_desc: "Aplicación demo para la gestión y control de asistencia, con inicio de sesión, registro de marcas y visualización en tiempo real.",
+
+        proj5_category: "Full Stack",
+        proj5_title_pre: "Veterinaria",
+        proj5_title_post: "Gestión de Citas",
+        proj5_desc: "Servicios, disponibilidad y registro de citas para una veterinaria.",
+
+        proj6_category: "Experiencia Stefanini",
+        proj6_title_pre: "Izipay Developers",
+        proj6_title_post: "Rediseño Web",
+        proj6_desc: "Rediseño del portal en Stefanini con React, mejorando UX e integración.",
         btn_view_repos: "Ver Repositorios Completos",
 
         // Contacto
@@ -106,6 +118,8 @@ const translations = {
         desc_robust_spas: "Development of Robust SPAs",
         desc_modern_base: "Base of Modern Development",
         desc_ui_ux: "Adaptive UI/UX Design",
+        desc_flutter: "Cross-platform mobile apps",
+        desc_react_native: "Native mobile development",
 
         tech_group_backend_db: "Backend & Databases",
         desc_apis_concurrency: "REST/GraphQL APIs and Backend (Node.js)",
@@ -146,6 +160,16 @@ const translations = {
         proj4_title_pre: "Attendance App",
         proj4_title_post: "Flutter Demo",
         proj4_desc: "Demo application for attendance management and control, featuring login, clock-in/out records, and real-time visualization.",
+
+        proj5_category: "Full Stack",
+        proj5_title_pre: "Veterinary",
+        proj5_title_post: "Appointment Management",
+        proj5_desc: "Services, availability, and appointment booking for a veterinary clinic.",
+
+        proj6_category: "Stefanini Experience",
+        proj6_title_pre: "Izipay Developers",
+        proj6_title_post: "Web Redesign",
+        proj6_desc: "Portal redesign at Stefanini with React, improving UX and integration.",
         btn_view_repos: "View Full Repositories",
 
         // Contact Texts
@@ -241,6 +265,16 @@ function updateText(lang) {
     updateElement('[data-key="proj4_title_post"]', t.proj4_title_post);
     updateElement('[data-key="proj4_desc"]', t.proj4_desc);
 
+    updateElement('[data-key="proj5_category"]', t.proj5_category);
+    updateElement('[data-key="proj5_title_pre"]', t.proj5_title_pre);
+    updateElement('[data-key="proj5_title_post"]', t.proj5_title_post);
+    updateElement('[data-key="proj5_desc"]', t.proj5_desc);
+
+    updateElement('[data-key="proj6_category"]', t.proj6_category);
+    updateElement('[data-key="proj6_title_pre"]', t.proj6_title_pre);
+    updateElement('[data-key="proj6_title_post"]', t.proj6_title_post);
+    updateElement('[data-key="proj6_desc"]', t.proj6_desc);
+
     updateElement('[data-key="btn_view_repos"]', t.btn_view_repos);
 
 
@@ -250,6 +284,8 @@ function updateText(lang) {
     updateElement('[data-key="desc_robust_spas"]', t.desc_robust_spas);
     updateElement('[data-key="desc_modern_base"]', t.desc_modern_base);
     updateElement('[data-key="desc_ui_ux"]', t.desc_ui_ux);
+    updateElement('[data-key="desc_flutter"]', t.desc_flutter);
+    updateElement('[data-key="desc_react_native"]', t.desc_react_native);
 
     updateElement('[data-key="tech_group_backend_db"]', t.tech_group_backend_db);
     updateElement('[data-key="desc_apis_concurrency"]', t.desc_apis_concurrency);

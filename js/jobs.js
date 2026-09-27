@@ -1,9 +1,35 @@
 const jobData = [
     {
+        company: "Softtek",
+        link: "https://www.softtek.com",
+        title: { es: "Software Engineer - Mobile Developer", en: "Software Engineer - Mobile Developer" },
+        range: "Jul. 2026 — Actualidad",
+        location: { es: "Perú (Remoto)", en: "Peru (Remote)" },
+        description: {
+            es: [
+                "Desarrollo y mantenimiento de aplicaciones móviles empresariales con Flutter y Dart, priorizando soluciones escalables, mantenibles y de alta calidad para entornos corporativos.",
+                "Diseño e implementación de interfaces de usuario centradas en la experiencia del usuario, alineadas con los estándares de diseño y accesibilidad de la organización.",
+                "Desarrollo de nuevas funcionalidades e integración con servicios backend mediante APIs REST, garantizando comunicación eficiente y confiable entre la aplicación y los sistemas corporativos.",
+                "Colaboración con equipos multidisciplinarios bajo metodologías ágiles (Scrum), participando activamente en planificación, desarrollo, pruebas y entrega continua (CI/CD) de funcionalidades.",
+                "Incorporé GitHub Copilot en el flujo diario de desarrollo, acelerando la escritura de código repetitivo y la generación de pruebas, lo que permitió dedicar más tiempo a lógica de negocio y decisiones de arquitectura.",
+                "Contribuí a reducir el tiempo de revisión de código del equipo al usar IA para generar documentación técnica y casos de prueba base, agilizando el proceso de QA."
+            ],
+            en: [
+                "Development and maintenance of enterprise mobile applications with Flutter and Dart, prioritizing scalable, maintainable, and high-quality solutions for corporate environments.",
+                "Design and implementation of user interfaces focused on user experience, aligned with the organization's design and accessibility standards.",
+                "Development of new features and integration with backend services through REST APIs, ensuring efficient and reliable communication between the application and corporate systems.",
+                "Collaboration with multidisciplinary teams under agile methodologies (Scrum), actively participating in planning, development, testing, and continuous delivery (CI/CD) of features.",
+                "Incorporated GitHub Copilot into the daily development workflow, speeding up repetitive code writing and test generation, which allowed more time for business logic and architecture decisions.",
+                "Contributed to reducing the team's code review time by using AI to generate technical documentation and baseline test cases, streamlining the QA process."
+            ]
+        },
+        stack: "Flutter · Dart · Git · REST APIs · Visual Studio Code · GitHub Copilot · Metodologías Ágiles (Scrum) · Desarrollo Móvil · CI/CD"
+    },
+    {
         company: "Stefanini Group",
         link: "https://stefanini.com/es/latam/stefanini-peru",
         title: { es: "Frontend / Mobile Developer", en: "Frontend / Mobile Developer" },
-        range: "Dic. 2025 — Actualidad",
+        range: "Dic. 2025 — Jul. 2026",
         location: { es: "Perú (Remoto)", en: "Peru (Remote)" },
         description: {
             es: [
@@ -34,28 +60,6 @@ const jobData = [
             ]
         },
         stack: "React · TypeScript · Flutter · Dart · Vite · Tailwind · REST APIs · Git"
-    },
-    {
-        company: "MindDev",
-        link: "https://minddev.pe",
-        title: { es: "Founder & CEO / Lead Frontend Developer", en: "Founder & CEO / Lead Frontend Developer" },
-        range: "2022 — Actualidad",
-        location: { es: "Lima, Perú (Híbrido)", en: "Lima, Peru (Hybrid)" },
-        description: {
-            es: [
-                "Líder visionario detrás de MindDev, con enfoque en la innovación ágil y la expansión de la compañía en el ámbito de la transformación digital.",
-                "Responsable de la definición de la arquitectura técnica y las mejores prácticas de desarrollo Frontend, priorizando la creación de experiencias de usuario memorables y accesibles.",
-                "Fomento de un entorno de desarrollo de alto rendimiento, aplicando metodologías de microservicios y asegurando la escalabilidad de todas las soluciones web.",
-                "Participación activa como desarrollador Frontend en proyectos clave, asegurando la entrega de código limpio, mantenible y de alta calidad."
-            ],
-            en: [
-                "Visionary leader behind MindDev, focused on agile innovation and company expansion in the digital transformation sector.",
-                "Responsible for defining the technical architecture and Frontend development best practices, prioritizing the creation of memorable and accessible user experiences.",
-                "Fostering a high-performance development environment, applying microservice methodologies and ensuring the scalability of all web solutions.",
-                "Active participation as a Frontend developer in key projects, ensuring the delivery of clean, maintainable, and high-quality code."
-            ]
-        },
-        stack: "React · Next.js · TypeScript · Liderazgo · Arquitectura de Microservicios · Agile · Git"
     },
     {
         company: "Intercapital Perú",
